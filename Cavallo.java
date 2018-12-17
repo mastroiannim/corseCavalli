@@ -58,12 +58,11 @@ public class Cavallo extends Thread
     public void setForma(int piazzamento){
         if(corsa < forma.length){
             forma[corsa] = piazzamento;
-            corsa++;
         }else{
-            corsa = forma.length -1;
             System.arraycopy(forma, 1, forma, 0, forma.length-1);
-            forma[corsa] = piazzamento;
+            forma[forma.length -1] = piazzamento;
         }
+        corsa++;
     }
     
     public String toString(){

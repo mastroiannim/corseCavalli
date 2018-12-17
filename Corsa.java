@@ -1,22 +1,16 @@
-public class Ippodromo
+public class Corsa
 {
     private Cavallo[] cavalli = Scuderia.creaCavalli();
 
-    private static Thread[] creaCorsa(Cavallo[] cavalli){
+    public void avviaCorsa() throws Exception{
+        System.out.println("--------- PARTITI ---------");
         Thread[] corsa = new Thread[cavalli.length];
         for(int i = 0; i<corsa.length; i++){
             corsa[i] = new Thread(cavalli[i]);
         }
-        return corsa;
-    }
-
-    public void avviaCorsa() throws Exception{
-        System.out.println("--------- PARTITI ---------");
-        Thread[] corsa = creaCorsa(cavalli);
         for(int i=0; i<corsa.length; i++){
             corsa[i].start();
         }
-
         for(int i=0; i<corsa.length; i++){
             corsa[i].join();
         } 
