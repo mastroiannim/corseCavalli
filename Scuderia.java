@@ -1,4 +1,3 @@
-
 public class Scuderia
 {
     public static Cavallo[] creaCavalli(){
