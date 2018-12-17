@@ -54,6 +54,18 @@ public class Cavallo extends Thread
     public long getTempo(){
         return tempo;
     }
+    
+    public int getNumero(){
+        return numero;
+    }
+    
+    public int getUltimoPiazzamento(){
+        if(corsa-1 < forma.length){
+            return forma[corsa-1];
+        }else{
+            return forma[forma.length-1];
+        }
+    }
 
     public void setForma(int piazzamento){
         if(corsa < forma.length){

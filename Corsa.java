@@ -2,7 +2,7 @@ public class Corsa
 {
     private Cavallo[] cavalli = Scuderia.creaCavalli();
 
-    public void avviaCorsa() throws Exception{
+    public Cavallo[] avviaCorsa() throws Exception{
         System.out.println("--------- PARTITI ---------");
         Thread[] corsa = new Thread[cavalli.length];
         for(int i = 0; i<corsa.length; i++){
@@ -15,6 +15,7 @@ public class Corsa
             corsa[i].join();
         } 
         aggiornaForma(cavalli);
+        return cavalli;
     }
 
     private void aggiornaForma(Cavallo[] cavalli){
