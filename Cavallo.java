@@ -1,5 +1,5 @@
 
-public class Cavallo extends Thread
+public class Cavallo extends Thread implements Comparable
 {
     String nickname;
     int numero, corsa;
@@ -79,5 +79,10 @@ public class Cavallo extends Thread
     
     public String toString(){
         return nickname + java.util.Arrays.toString(forma); 
+    }
+    
+    public int compareTo(Object a) { 
+        Cavallo ca = (Cavallo)(a);
+        return (int) (this.getTempo() - ca.getTempo()); 
     }
 }
